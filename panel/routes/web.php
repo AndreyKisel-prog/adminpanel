@@ -25,6 +25,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(
     ['prefix' => 'adpanel', 'middleware' => ['role:admin']],
     function () {
-        Route::get('/', [HomeController::class, 'index']);
+        Route::get('/', [HomeController::class, 'index'])->name('homeAdmin');
+
+        // Route::get('/', [HomeController::class, 'index']);
+
     }
 );
