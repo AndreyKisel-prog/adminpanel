@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::group(
+    ['prefix' => 'adpanel', 'middleware' => ['role:admin']],
+    function () {
+        Route::get('/', [HomeController::class, 'index']);
+    }
+);
