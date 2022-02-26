@@ -14,6 +14,7 @@
                 <th>Название</th>
                 <th>дата создания</th>
                 <th>дата редактирования</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +24,14 @@
                     <td>{{ $category->title }}</td>
                     <td>{{ $category->created_at }}</td>
                     <td>{{ $category->updated_at }}</td>
+                    <td>
+                        <a class='btn btn-warning'
+                        href="{{route('categories.edit', $category['id']) }}"
+                        >редактировать</a>
+                        <button class='btn btn-danger'>удалить</button>
+                    </td>
                 </tr>
+
             @endforeach
         </tbody>
     </table>
