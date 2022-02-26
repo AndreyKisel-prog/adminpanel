@@ -87,13 +87,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{route('categories.index')}}" class="nav-link active">
 
                                         <p>Все категории</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('categories.create')}}" class="nav-link">
                                         <p>Добавить категорию</p>
                                     </a>
                                 </li>
@@ -107,12 +107,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{route('posts.index')}}" class="nav-link active">
                                         <p>Все статьи</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('posts.create')}}" class="nav-link">
                                         <p>Добавить статью</p>
                                     </a>
                                 </li>

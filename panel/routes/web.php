@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,7 @@ Route::group(
     ['prefix' => 'adpanel', 'middleware' => ['role:admin']],
     function () {
         Route::get('/', [HomeController::class, 'index'])->name('homeAdmin');
-
-        // Route::get('/', [HomeController::class, 'index']);
-
+        Route::resource('/categories', CategoryController::class);
+        Route::resource('/posts', PostController::class);
     }
 );
