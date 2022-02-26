@@ -5,6 +5,15 @@
 @section('content')
 
 
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            <span aria-hidden="true">{{ session('success') }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                X
+            </button>
+        </div>
+    @endif
+
     <div class="p-2 container">
 
         <div class="card card-info mt-4">
@@ -14,8 +23,8 @@
 
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{ route('categories.store') }}"
-            method="POST" class="form-horizontal"  >
+
+            <form action="{{ route('categories.store') }}" method="POST" class="form-horizontal">
                 @csrf
                 <div class="card-body">
                     <div class=" input-group  ">

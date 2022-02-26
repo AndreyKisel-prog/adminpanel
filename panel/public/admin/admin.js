@@ -17,6 +17,11 @@ $(document).ready(function () {
     });
 })
 
+
+// $('#myAlert').on('closed.bs.alert', function () {
+//     alert('sdfg') ;
+//   })
+
 tinymce.init({
     selector: '.editor',
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
