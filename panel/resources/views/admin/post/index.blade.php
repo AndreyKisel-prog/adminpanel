@@ -1,21 +1,22 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Все статьи')
+@section('title', 'All posts')
 
 @section('content')
-    <h1>Все статьи</h1>
+    <h1>All posts</h1>
 
     <div class="card-body">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>Заголовок</th>
+                    <th>title</th>
                     <th>img</th>
                     <th>text</th>
-                    <th>категория</th>
-                    <th>дата создания</th>
-                    <th>дата редактирования</th>
+                    <th>id category</th>
+                    <th>category title</th>
+                    <th>created at</th>
+                    <th>updated at</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +26,8 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->img }}</td>
                         <td>{{ $post->text }}</td>
-                        <td>{{ $post->category }}</td>
+                        <td>{{ $post->category_id }}</td>
+                        <td>{{ $post->category['title'] }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td>{{ $post->updated_at }}</td>
                     </tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'DESC')->get();
        return view('admin.post.index', ['posts' => $posts]);
     }
 
@@ -26,7 +27,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.post.create');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+
+        return view('admin.post.create', ['categories' => $categories]);
     }
 
     /**
@@ -37,7 +40,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newpost = new Post;
+        $newpost->title = $request->title;
+        $newpost->text = $request->text;
+        $newpost->category_id = $request->category_id;
+        $newpost->img= '';
+        $newpost->save();
+        return redirect()->back()->withSuccess('New post added successfully');
     }
 
     /**
