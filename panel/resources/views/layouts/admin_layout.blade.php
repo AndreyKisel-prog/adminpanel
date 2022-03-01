@@ -39,15 +39,13 @@
                 height="60" width="60">
         </div>
 
-
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{'homeAdmin'}}" class="brand-link">
                 <img src={{ URL::asset('admin/dist/img/AdminLTELogo.png') }} alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Админ-панель</span>
+                <span class="brand-text font-weight-light">Admin-panel</span>
             </a>
 
             <!-- Sidebar -->
@@ -63,7 +61,6 @@
                     </div>
                 </div>
 
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -73,28 +70,27 @@
                         <li class="nav-item menu-open">
                             <a href="{{route('homeAdmin')}}" class="nav-link">
                                 <p>
-                                    Главная
+                                    Main
                                 </p>
                             </a>
-
                         </li>
 
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link ">
                                 <p>
-                                    Категории
+                                    Categories
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('categories.index')}}" class="nav-link active">
 
-                                        <p>Все категории</p>
+                                        <p>All categories</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('categories.create')}}" class="nav-link">
-                                        <p>Добавить категорию</p>
+                                        <p>Add new category</p>
                                     </a>
                                 </li>
                             </ul>
@@ -102,18 +98,18 @@
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link ">
                                 <p>
-                                    Блог
+                                    Blog
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('posts.index')}}" class="nav-link active">
-                                        <p>Все статьи</p>
+                                        <p>All posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('posts.create')}}" class="nav-link">
-                                        <p>Добавить статью</p>
+                                        <p>Add new post</p>
                                     </a>
                                 </li>
                             </ul>
