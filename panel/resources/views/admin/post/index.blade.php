@@ -3,6 +3,18 @@
 @section('title', 'All posts')
 
 @section('content')
+
+
+    @if (session('success'))
+        <div class="alert alert-success my-3" role="alert">
+            <span aria-hidden="true">{{ session('success') }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                X
+            </button>
+        </div>
+    @endif
+
+
     <h1>All posts</h1>
 
     <div class="card-body">
@@ -27,14 +39,28 @@
                         <td>{{ $post->img }}</td>
                         <td>{{ $post->text }}</td>
                         <td>{{ $post->category_id }}</td>
-                        <td>{{ $post->category['title'] }}</td>
+                        <td>{{ $post->category["title"] }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td>{{ $post->updated_at }}</td>
+
+                        <td>
+                            <a class='btn btn-warning' href="{{ route('posts.edit', $post['id']) }}">редактировать
+                            </a>
+                        </td>
+                        <td>
+                            <form action="{{ route('posts.destroy', $post['id']) }}" method="POST"
+                                style="display:inline-block">
+                                @method("DELETE")
+                                @CSRF
+                                <button type='submit' class='btn btn-danger delete-btn'>удалить</button>
+                            </form>
+
+                        </td>
+
+
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-
-
 @endsection

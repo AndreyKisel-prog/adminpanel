@@ -68,7 +68,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+
     }
 
     /**
@@ -91,6 +91,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->back()->withSuccess('Post has been deleted successfuly');
     }
 }

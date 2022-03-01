@@ -78,7 +78,7 @@ class CategoryController extends Controller
     {
         $category->title = $request->title;
         $category->save();
-        return redirect()->back()->withSuccess('Категория успешно изменена');
+        return redirect()->back()->withSuccess('Category has been updated successfully');
     }
 
     /**
@@ -90,6 +90,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->back()->withSuccess('Категория успешно удалена');
+        return redirect()->back()->withSuccess('Category has been deleted successfully');
     }
 }

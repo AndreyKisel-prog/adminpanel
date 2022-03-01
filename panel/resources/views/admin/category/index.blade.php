@@ -1,10 +1,10 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Все категории')
+@section('title', 'all categories')
 
 @section('content')
 
-    <h1>Все категории</h1>
+    <h1>all categories</h1>
 
 
     @if (session('success'))
@@ -17,16 +17,14 @@
     @endif
 
 
-
-
     <div class="card-body">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>Название</th>
-                    <th>дата создания</th>
-                    <th>дата редактирования</th>
+                    <th>title</th>
+                    <th>created at</th>
+                    <th>updated at</th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,16 +37,14 @@
                         <td>{{ $category->updated_at }}</td>
                         <td>
                             <a class='btn btn-warning'
-                                href="{{ route('categories.edit', $category['id']) }}">редактировать
+                                href="{{ route('categories.edit', $category['id']) }}">edit
                             </a>
-
-                            <form action="{{ route('categories.destroy', $category['id']) }}"
-                            method="POST" style="display:inline-block">
+                            <form action="{{ route('categories.destroy', $category['id']) }}" method="POST"
+                                style="display:inline-block">
                                 @method("DELETE")
                                 @CSRF
-                                <button type='submit' class='btn btn-danger delete-btn'>удалить</button>
+                                <button type='submit' class='btn btn-danger delete-btn'>delete</button>
                             </form>
-
                         </td>
                     </tr>
                 @endforeach
