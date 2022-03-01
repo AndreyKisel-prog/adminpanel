@@ -66,9 +66,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, Category $category)
     {
 
+        return view('admin.post.edit', [
+            'post' => $post,
+            'categories' => $category->orderBy('id','DESC')->get(),
+        ]);
     }
 
     /**
@@ -80,7 +84,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->text = $request->text;
+        $post->category_id = $request->category_id;
+        $post->save();
+        return redirect()->back()->withSuccess('Post has been updated successfuly');
     }
 
     /**

@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
     public function category(){
-        return $this->belongsTo(Category::class, 'id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
 }
